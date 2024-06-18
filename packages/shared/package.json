@@ -1,6 +1,6 @@
 {
   "name": "@repo/shared",
-  "version": "0.0.9",
+  "version": "0.0.0",
   "private": true,
   "sideEffects": false,
   "main": "./dist/index.js",
@@ -44,7 +44,8 @@
     "nextjs-themes": "^3.1.2",
     "r18gs": "^1.1.2",
     "react-live": "^4.1.6",
-    "react18-loaders": "workspace:*"
+    "react18-loaders": "latest",
+    "esbuild-plugin-rdi": "workspace:*"
   },
   "peerDependencies": {
     "@types/react": "16.8 - 19",

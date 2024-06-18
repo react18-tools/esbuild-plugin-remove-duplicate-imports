@@ -9,7 +9,6 @@
     "lint": "turbo lint",
     "test": "turbo test",
     "typecheck": "turbo typecheck",
-    "postinstall": "echo run `node scripts/rebrand.js` to setup your repo.",
     "preinstall": "node scripts/update-pm.js"
   },
   "devDependencies": {
@@ -28,7 +27,7 @@
     "typedoc-plugin-rename-defaults": "^0.7.0",
     "typedoc-plugin-zod": "^1.1.2"
   },
-  "packageManager": "pnpm@9.4.0",
+  "packageManager": "pnpm@9.3.0",
   "engines": {
     "node": ">=18"
   },
