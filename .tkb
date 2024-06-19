@@ -1,29 +1,9 @@
 {
   "scope": "Workspace",
   "tasks": {
-    "RX4J5v4y5IOe_ucf8pMRT": {
-      "id": "RX4J5v4y5IOe_ucf8pMRT",
-      "description": "🌟 Enable [private vulnerability reporting](https://github.com/react18-tools/esbuild-plugin-remove-duplicate-require/security)(https://github.com/react18-tools/esbuild-plugin-remove-duplicate-imports/security) (For public repo - do this after updating visibility to public)",
-      "columnId": "column-todo"
-    },
-    "EdPbrbJLllUHfZmCS80f7": {
-      "id": "EdPbrbJLllUHfZmCS80f7",
-      "description": "Set up `CodeCov`\n  - Visit Codecov and set up your repo\n  - Create [repository secret]((https://github.com/react18-tools/esbuild-plugin-remove-duplicate-require/settings/secrets/actions))((https://github.com/react18-tools/esbuild-plugin-remove-duplicate-imports/settings/secrets/actions)) for `CODECOV_TOKEN`",
-      "columnId": "column-todo"
-    },
-    "MLLUsAhCKaKxvEXFY0HSq": {
-      "id": "MLLUsAhCKaKxvEXFY0HSq",
-      "description": "Set up `CodeClimate`\n  - Visit CodeClimate and set up your repo\n  - Create [repository secret] for `CC_TEST_REPORTER_ID`\n  - Add `*.test.*` to ignore patterns on the website\n  - Update Code Climate badge",
-      "columnId": "column-todo"
-    },
     "gMYfaAh2RABMP8uZRQgNx": {
       "id": "gMYfaAh2RABMP8uZRQgNx",
       "description": "Add `NPM_AUTH_TOKEN` to repository secrets to automate package publishing\n  - Log in to your [`npm` account](https://www.npmjs.com/login) and create an automation token\n  - Create a new repository secret `NPM_AUTH_TOKEN`",
-      "columnId": "column-todo"
-    },
-    "_BfuX7quWBANpDK1bI7YM": {
-      "id": "_BfuX7quWBANpDK1bI7YM",
-      "description": "Update description in `lib/package.json`",
       "columnId": "column-todo"
     },
     "dC7QDBLH8BmHUfaYmIt81": {
@@ -77,11 +57,7 @@
       "id": "column-todo",
       "title": "To do",
       "tasksIds": [
-        "RX4J5v4y5IOe_ucf8pMRT",
-        "EdPbrbJLllUHfZmCS80f7",
-        "MLLUsAhCKaKxvEXFY0HSq",
         "gMYfaAh2RABMP8uZRQgNx",
-        "_BfuX7quWBANpDK1bI7YM",
         "dC7QDBLH8BmHUfaYmIt81",
         "P_NrSJQ8m91Odgz8E1fS6",
         "1dRWJhy45E1Rq5wZAmPHt",
