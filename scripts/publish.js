@@ -36,7 +36,11 @@ if (!isPatch) {
   require("./update-security-md")(`${newMajor}.${newMinor}`, `${oldMajor}.${oldMinor}`);
   /** Create new release branch for every Major or Minor release */
   const releaseBranch = `release-${newMajor}.${newMinor}`;
-  execSync(`git checkout -b ${releaseBranch} && git push origin ${releaseBranch}`);
+  try {
+    execSync(`git checkout -b ${releaseBranch} && git push origin ${releaseBranch}`);
+  } catch {
+    // empty
+  }
 }
 
 /** Create release */
