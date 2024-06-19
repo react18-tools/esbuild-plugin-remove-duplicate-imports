@@ -1,5 +1,5 @@
 {
-  "packageName": "esbuild-plugin-rdi",
+  "packageName": "ep-rdi",
   "owner": "react18-tools",
-  "repo": "esbuild-plugin-remove-duplicate-imports"
+  "repo": "esbuild-plugin-remove-duplicate-require"
 }

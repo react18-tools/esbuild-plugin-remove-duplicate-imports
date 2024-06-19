@@ -8,9 +8,9 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "repository": "github:react18-tools/esbuild-plugin-remove-duplicate-imports",
-  "bugs": "https://github.com/react18-tools/esbuild-plugin-remove-duplicate-imports/issues",
-  "homepage": "https://github.com/react18-tools/esbuild-plugin-remove-duplicate-imports/#readme",
+  "repository": "github:react18-tools/esbuild-plugin-remove-duplicate-require",
+  "bugs": "https://github.com/react18-tools/esbuild-plugin-remove-duplicate-require/issues",
+  "homepage": "https://github.com/react18-tools/esbuild-plugin-remove-duplicate-require/#readme",
   "sideEffects": false,
   "files": [
     "dist/**"
@@ -49,8 +49,6 @@
     }
   ],
   "keywords": [
-    "React",
-    "React Loaders",
     "React 18",
     "React 19",
     "Next.js",

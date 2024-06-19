@@ -1,6 +1,6 @@
-# Esbuild Plugin Rdi <img src="https://github.com/react18-tools/esbuild-plugin-remove-duplicate-imports/blob/main/popper.png?raw=true" style="height: 40px"/>
+# Esbuild Plugin Remove Duplicate Imports <img src="https://github.com/react18-tools/esbuild-plugin-remove-duplicate-require/blob/main/popper.png?raw=true" style="height: 40px"/>
 
-[![test](https://github.com/react18-tools/esbuild-plugin-remove-duplicate-imports/actions/workflows/test.yml/badge.svg)](https://github.com/react18-tools/esbuild-plugin-remove-duplicate-imports/actions/workflows/test.yml) [![Maintainability](https://api.codeclimate.com/v1/badges/aa896ec14c570f3bb274/maintainability)](https://codeclimate.com/github/react18-tools/esbuild-plugin-remove-duplicate-imports/maintainability) [![codecov](https://codecov.io/gh/react18-tools/esbuild-plugin-remove-duplicate-imports/graph/badge.svg)](https://codecov.io/gh/react18-tools/esbuild-plugin-remove-duplicate-imports) [![Version](https://img.shields.io/npm/v/esbuild-plugin-rdi.svg?colorB=green)](https://www.npmjs.com/package/esbuild-plugin-rdi) [![Downloads](https://img.jsdelivr.com/img.shields.io/npm/d18m/esbuild-plugin-rdi.svg)](https://www.npmjs.com/package/esbuild-plugin-rdi) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/esbuild-plugin-rdi) [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
+[![test](https://github.com/react18-tools/esbuild-plugin-remove-duplicate-require/actions/workflows/test.yml/badge.svg)](https://github.com/react18-tools/esbuild-plugin-remove-duplicate-require/actions/workflows/test.yml) [![Maintainability](https://api.codeclimate.com/v1/badges/aa896ec14c570f3bb274/maintainability)](https://codeclimate.com/github/react18-tools/esbuild-plugin-remove-duplicate-require/maintainability) [![codecov](https://codecov.io/gh/react18-tools/esbuild-plugin-remove-duplicate-require/graph/badge.svg)](https://codecov.io/gh/react18-tools/esbuild-plugin-remove-duplicate-require) [![Version](https://img.shields.io/npm/v/esbuild-plugin-rdi.svg?colorB=green)](https://www.npmjs.com/package/esbuild-plugin-rdi) [![Downloads](https://img.jsdelivr.com/img.shields.io/npm/d18m/esbuild-plugin-rdi.svg)](https://www.npmjs.com/package/esbuild-plugin-rdi) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/esbuild-plugin-rdi) [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 
 Esbuild Plugin Rdi is a comprehensive library designed to unlock the full potential of React 18 server components. It provides customizable loading animation components and a fullscreen loader container, seamlessly integrating with React and Next.js.
 
@@ -12,11 +12,11 @@ Esbuild Plugin Rdi is a comprehensive library designed to unlock the full potent
 
 ✅ Compatible with all React 18 build systems/tools/frameworks
 
-✅ Documented with [Typedoc](https://react18-tools.github.io/esbuild-plugin-remove-duplicate-imports) ([Docs](https://react18-tools.github.io/esbuild-plugin-remove-duplicate-imports))
+✅ Documented with [Typedoc](https://react18-tools.github.io/esbuild-plugin-remove-duplicate-require) ([Docs](https://react18-tools.github.io/esbuild-plugin-remove-duplicate-require))
 
 ✅ Examples for Next.js, Vite, and Remix
 
-> <img src="https://github.com/react18-tools/esbuild-plugin-remove-duplicate-imports/blob/main/popper.png?raw=true" style="height: 20px"/> Please consider starring [this repository](https://github.com/react18-tools/esbuild-plugin-remove-duplicate-imports) and sharing it with your friends.
+> <img src="https://github.com/react18-tools/esbuild-plugin-remove-duplicate-require/blob/main/popper.png?raw=true" style="height: 20px"/> Please consider starring [this repository](https://github.com/react18-tools/esbuild-plugin-remove-duplicate-require) and sharing it with your friends.
 
 ## Getting Started
 
@@ -92,7 +92,7 @@ export default function MyComponent() {
 }
 ```
 
-For detailed API and options, refer to [the API documentation](https://react18-tools.github.io/esbuild-plugin-remove-duplicate-imports).
+For detailed API and options, refer to [the API documentation](https://react18-tools.github.io/esbuild-plugin-remove-duplicate-require).
 
 **Using LoaderContainer**
 
@@ -123,9 +123,7 @@ export default MyComponent() {
 
 This library is licensed under the MPL-2.0 open-source license.
 
-
-
-> <img src="https://github.com/react18-tools/esbuild-plugin-remove-duplicate-imports/blob/main/popper.png?raw=true" style="height: 20px"/> Please consider enrolling in [our courses](https://mayank-chaudhari.vercel.app/courses) or [sponsoring](https://github.com/sponsors/mayank1513) our work.
+> <img src="https://github.com/react18-tools/esbuild-plugin-remove-duplicate-require/blob/main/popper.png?raw=true" style="height: 20px"/> Please consider enrolling in [our courses](https://mayank-chaudhari.vercel.app/courses) or [sponsoring](https://github.com/sponsors/mayank1513) our work.
 
 <hr />
 

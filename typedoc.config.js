@@ -1,7 +1,7 @@
 /** @type {import('typedoc').TypeDocOptions} */
 module.exports = {
   tsconfig: "tsconfig.docs.json",
-  name: "Esbuild Plugin Rdi",
+  name: "Esbuild Plugin Remove Duplicate Imports",
   entryPoints: ["./lib/src"],
   exclude: ["**/*.test.tsx", "**/declaration.d.ts"],
   entryPointStrategy: "Expand",

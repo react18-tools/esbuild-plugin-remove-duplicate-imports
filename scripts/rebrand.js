@@ -13,8 +13,6 @@ const [owner, repo] = execSync(
 
 const packageName = repo;
 
-if (repo === "turborepo-template" && /(mayank1513|react18-tools)/.test(owner)) return; // silently ignore
-
 console.log("\x1b[32m", "---");
 console.log("\x1b[5m", "...");
 console.log(
