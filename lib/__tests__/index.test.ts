@@ -40,7 +40,7 @@ describe.concurrent("Test plugin with ESBuild with default options", async () =>
     await esbuild.build(options);
   });
 
-  test(`"use client"; directive should be present in client components`, ({ expect }) => {
+  test("Should not contain duplicate require statements for a library", ({ expect }) => {
     const text = fs.readFileSync(path.resolve(buildDir, "index.js"), "utf-8");
     expect(text.match(/['"]react['"]/)?.length).toBe(1);
   });
