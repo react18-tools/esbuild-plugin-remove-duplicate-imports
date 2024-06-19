@@ -11,7 +11,6 @@ export default defineConfig(
       minify: !options.watch,
       bundle: true,
       dts: true,
-      footer: { js: "module.exports = module.exports.default;" },
       ...options,
     }) as Options,
 );
