@@ -1,6 +1,7 @@
 import { defineConfig, type Options } from "tsup";
 import react18Plugin from "esbuild-plugin-react18";
 import cssPlugin from "esbuild-plugin-react18-css";
+import {} from "ep-rdi";
 
 export default defineConfig(
   (options: Options) =>

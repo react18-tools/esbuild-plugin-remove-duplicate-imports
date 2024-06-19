@@ -40,16 +40,16 @@
   "dependencies": {
     "@mayank1513/fork-me": "^2.1.2",
     "@repo/scripts": "workspace:*",
+    "ep-rdi": "workspace:*",
     "nextjs-darkmode": "^1.0.2",
     "nextjs-themes": "^3.1.2",
     "r18gs": "^1.1.2",
     "react-live": "^4.1.6",
-    "react18-loaders": "latest",
-    "esbuild-plugin-rdi": "workspace:*"
+    "react18-loaders": "latest"
   },
   "peerDependencies": {
     "@types/react": "16.8 - 19",
-    "next": "10 - 14",
+    "next": "10 - 15",
     "react": "16.8 - 19"
   },
   "peerDependenciesMeta": {
