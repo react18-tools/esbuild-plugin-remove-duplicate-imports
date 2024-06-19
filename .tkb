@@ -1,11 +1,6 @@
 {
   "scope": "Workspace",
   "tasks": {
-    "jdZxwLymOo7w2eZeNpvsN": {
-      "id": "jdZxwLymOo7w2eZeNpvsN",
-      "description": "Run `yarn plop`, and follow prompts to generate server or client components for your library",
-      "columnId": "column-todo"
-    },
     "RX4J5v4y5IOe_ucf8pMRT": {
       "id": "RX4J5v4y5IOe_ucf8pMRT",
       "description": "🌟 Enable [private vulnerability reporting](https://github.com/react18-tools/esbuild-plugin-remove-duplicate-imports/security) (For public repo - do this after updating visibility to public)",
@@ -82,7 +77,6 @@
       "id": "column-todo",
       "title": "To do",
       "tasksIds": [
-        "jdZxwLymOo7w2eZeNpvsN",
         "RX4J5v4y5IOe_ucf8pMRT",
         "EdPbrbJLllUHfZmCS80f7",
         "MLLUsAhCKaKxvEXFY0HSq",
