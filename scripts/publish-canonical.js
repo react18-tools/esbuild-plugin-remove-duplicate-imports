@@ -1,3 +1,5 @@
+const { execSync } = require("child_process");
+
 // Publish canonical packages
 [
   "esbuild-plugin-remove-duplicate-imports",
