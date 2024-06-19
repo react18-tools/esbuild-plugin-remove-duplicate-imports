@@ -1,4 +1,4 @@
-import type { BuildResult, OnLoadResult, Plugin, PluginBuild } from "esbuild";
+import type { BuildResult, Plugin, PluginBuild } from "esbuild";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -7,57 +7,64 @@ const uuid = () => (Date.now() * Math.random()).toString(36).slice(0, 8);
 const name = `esbuild-plugin-rdi-${uuid()}`;
 
 export interface RDIPluginOptions {
-  dedupeUseEffect?: boolean;
-  dedupeUseState?: boolean;
-  dedupeUseCallback?: boolean;
-  dedupeUseMemo?: boolean;
-  dedupeUseRef?: boolean;
-  skipFiles?: string[];
-  skipFilesPattern?: RegExp;
+  // dedupeUseEffect?: boolean;
+  // dedupeUseState?: boolean;
+  // dedupeUseCallback?: boolean;
+  // dedupeUseMemo?: boolean;
+  // dedupeUseRef?: boolean;
+  // skipFiles?: string[];
+  // skipFilesPattern?: RegExp;
 }
 
-const jsxImportRegExp = /(var |,)[a-zA-Z_$][\w$]*=require\("react\/jsx-runtime"\)[;,]?/g;
 const regExp2replace2GetVar0 = /(var |,)/;
-const regExp2replace2GetVar = /[=]require\(['"]react\/jsx-runtime['"]\)[;,]?/;
 
 const requireTokenRegExp = /require\(['"][^'"]*['"]\)/g;
 
 const extractRequireTokenRegExp = /require\(['"]/g;
 
+/** Removes a single token (e.g, require("react")) duplication from the file. */
+const removeToken = (txt: string, token: string) => {
+  const importRegExp = new RegExp(
+    `(var |,)[a-zA-Z_$][\\w$]*=require\\(["']${token}["']\\)[;,]?`,
+    "g",
+  );
+  const regExp2replace2GetVar = new RegExp(`[=]require\\(['"]${token}['"]\\)[;,]?`);
+
+  const tokenMatches = txt.match(importRegExp);
+  if (tokenMatches !== null && tokenMatches.length > 1) {
+    const importVarName = tokenMatches[0]
+      .replace(regExp2replace2GetVar, "")
+      .replace(regExp2replace2GetVar0, "");
+    for (let index = 1; index < tokenMatches.length; index++) {
+      let token = tokenMatches[index];
+      if (/^,.*,$/.test(token)) token = token.slice(1);
+      else if (/^,.*;$/.test(token)) token = token.replace(";", "");
+      else if (/^var .*,$/.test(token)) token = token.slice(4);
+      txt = txt.replace(token, "");
+      const v1 = tokenMatches[index]
+        .replace(regExp2replace2GetVar, "")
+        .replace(regExp2replace2GetVar0, "");
+      txt = txt.replace(new RegExp(`(?<!--)\\b${v1}\\b`, "g"), importVarName);
+    }
+  }
+  return txt;
+};
+
+/** Removes duplicate requires from a file. */
 const removeDuplicateRequireFromFile = (txt: string) => {
   const requireTokenMatches = txt.match(requireTokenRegExp);
   const requireTokens =
-    requireTokenMatches?.map(token => token.replace(extractRequireTokenRegExp, "").slice(-2)) ?? [];
+    requireTokenMatches?.map(token => token.replace(extractRequireTokenRegExp, "").slice(0, -2)) ??
+    [];
 
   // get unique tokens sorted
   const uniqueTokens = [...new Set(requireTokens)];
-  uniqueTokens.sort((a, b) => a.length - b.length);
+  uniqueTokens.sort((a, b) => b.length - a.length);
 
-  console.log({ uniqueTokens });
+  for (const token of uniqueTokens) {
+    txt = removeToken(txt, token);
+  }
 
-  // remove duplicate tokens
-  // uniqueTokens.forEach(token => {
-  //   const regExp = new RegExp(`require\\(['"]${token}['"]\\)[;,]?`, "g");
-  //   txt = txt.replace(regExp, "");
-  // });
-
-  // const jsxMatches = txt.match(jsxImportRegExp);
-  // if (jsxMatches !== null && jsxMatches.length > 1) {
-  //   const importVarName = jsxMatches[0]
-  //     .replace(regExp2replace2GetVar, "")
-  //     .replace(regExp2replace2GetVar0, "");
-  //   for (let index = 1; index < jsxMatches.length; index++) {
-  //     let token = jsxMatches[index];
-  //     if (/^,.*,$/.test(token)) token = token.slice(1);
-  //     else if (/^,.*;$/.test(token)) token = token.replace(";", "");
-  //     else if (/^var .*,$/.test(token)) token = token.slice(4);
-  //     txt = txt.replace(token, "");
-  //     const v1 = jsxMatches[index]
-  //       .replace(regExp2replace2GetVar, "")
-  //       .replace(regExp2replace2GetVar0, "");
-  //     txt = txt.replace(new RegExp(`(?<!--)\\b${v1}\\b`, "g"), importVarName);
-  //   }
-  // }
   return txt;
 };
 
@@ -74,7 +81,7 @@ const onEndCallBack = (result: BuildResult, options: RDIPluginOptions, write?: b
 
   /** remove multiple imports */
   result.outputFiles
-    ?.filter(f => !f.path.endsWith(".map"))
+    ?.filter(f => !f.path.endsWith(".map") && !f.path.endsWith(".d.js"))
     .forEach(f => {
       let txt = f.text;
 
@@ -82,7 +89,9 @@ const onEndCallBack = (result: BuildResult, options: RDIPluginOptions, write?: b
       txt = txt.replace(emptyChunkImportRegExp, "");
 
       /** remove extra jsx-runtime imports */
-      if (f.path.endsWith(".js")) txt = removeDuplicateRequireFromFile(txt);
+      if (f.path.endsWith(".js")) {
+        txt = removeDuplicateRequireFromFile(txt);
+      }
       f.contents = new TextEncoder().encode(txt);
     });
 
@@ -97,6 +106,7 @@ const onEndCallBack = (result: BuildResult, options: RDIPluginOptions, write?: b
   }
 };
 
+/** The plugin setup function */
 const setup = (build: PluginBuild, options: RDIPluginOptions = {}) => {
   const write = build.initialOptions.write;
   build.initialOptions.write = false;
@@ -110,9 +120,7 @@ const setup = (build: PluginBuild, options: RDIPluginOptions = {}) => {
 /**
  * Remove Duplicate Imports
  * This plugin prevents building test files by esbuild. DTS may still geenrate type files for the tests with only { } as file content*/
-const rdiPlugin: (options?: RDIPluginOptions) => Plugin = (options = {}) => ({
+export const rdiPlugin: (options?: RDIPluginOptions) => Plugin = (options = {}) => ({
   name,
   setup: build => setup(build, options),
 });
-
-export default rdiPlugin;
