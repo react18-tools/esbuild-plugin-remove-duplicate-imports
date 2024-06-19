@@ -44,7 +44,7 @@ if (!isPatch) {
 }
 
 /** Create release */
-execSync("cd lib && pnpm build && npm publish --access public");
+execSync("cd lib && pnpm build && npm publish --provenance --access public");
 
 /** Create GitHub release */
 execSync(
