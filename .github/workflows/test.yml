@@ -16,8 +16,8 @@ jobs:
           node-version: 20
       - run: npm i -g pnpm && pnpm i
         name: Install dependencies
-      - name: Run unit tests
-        run: pnpm test
+      - name: Build Shared Package and Run unit tests
+        run: pnpm build --filter @repo/shared && pnpm test
       - name: Upload coverage reports to Codecov
         continue-on-error: true
         uses: codecov/codecov-action@v4

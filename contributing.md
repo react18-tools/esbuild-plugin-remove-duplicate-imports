@@ -56,7 +56,7 @@ pnpm dev
 To execute unit tests, use:
 
 ```bash
-pnpm test
+pnpm build --filter @repo/shared && pnpm test
 ```
 
 ### Linting and Formatting

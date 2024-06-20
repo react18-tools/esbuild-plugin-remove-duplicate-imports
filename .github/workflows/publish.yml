@@ -32,8 +32,8 @@ jobs:
       - run: npm i -g pnpm && pnpm i
         name: Install dependencies
         # fail and not publish if any of the unit tests are failing
-      - name: Test
-        run: pnpm test
+      - name: Test - need to build shared before testing
+        run: pnpm build --filter @repo/shared && pnpm test
       - name: Copy Readme file
         run: cp ./README.md ./lib # will be uncommented while rebranding
       - name: Apply changesets, publish and create release, branches and tags
