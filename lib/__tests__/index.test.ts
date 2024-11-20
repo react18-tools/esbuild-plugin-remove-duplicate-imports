@@ -21,7 +21,7 @@ async function createEsBUildOptions(
   } catch {}
   return {
     format: "cjs",
-    target: "es2019",
+    target: "esnext",
     sourcemap: false,
     bundle: true,
     minify: true,
