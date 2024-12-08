@@ -7,7 +7,7 @@ import { Core } from "nextjs-darkmode";
 import { Demo, Header } from "@repo/shared";
 
 /** Vite App */
-function App(): JSX.Element {
+function App() {
   const { setLoading } = useLoader();
   const handleClick = useCallback(() => setLoading(true), []);
   return (
