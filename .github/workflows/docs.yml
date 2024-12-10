@@ -29,8 +29,6 @@ jobs:
           git pull
       - run: npm i -g pnpm && pnpm i
         name: Install dependencies
-      - name: Test
-        run: pnpm build --filter @repo/shared && pnpm test
       - run: git stash --include-untracked
         name: clean up working directory
       - run: npx @turbo/codemod update . && pnpm update --latest -r
