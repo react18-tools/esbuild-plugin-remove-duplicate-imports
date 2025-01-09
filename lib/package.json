@@ -34,7 +34,7 @@
     "react-dom": "^19.0.0",
     "tiny-glob": "^0.2.9",
     "tsup": "^8.3.5",
-    "typescript": "^5.7.2",
+    "typescript": "^5.7.3",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^2.1.8"
   },
